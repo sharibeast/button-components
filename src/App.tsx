@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import type * as Stitches from '@stitches/react'
+import { styled } from '@stitches/react'
+import { typeScale, neutral, dark } from './utils';
+
+
+
+
+const Button = styled('button', {
+  fontSize: `${typeScale.medium}`,
+  padding: '8px 16px',
+  borderRadius: '6px',
+  outline: 'none',
+  border: 'none',
+  boxShadow: '0px 2px 3px rgba(51,51,51,0.2)',
+  backgroundColor: `${neutral[200]}`,
+  fontWeight: '500',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: `${neutral[400]}`,
+  }
+})
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>compons</h1>
+      <Button>default</Button>
+
     </div>
   );
 }
