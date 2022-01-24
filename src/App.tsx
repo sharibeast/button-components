@@ -1,10 +1,11 @@
 import React from 'react';
-import type * as Stitches from '@stitches/react'
 import { styled } from '@stitches/react'
-import { typeScale, neutral, dark } from './utils';
+import { typeScale, neutral, dark, blue } from './utils';
 
 
-
+const Wrapper = styled('div', {
+  display: 'flex'
+})
 
 const Button = styled('button', {
   fontSize: `${typeScale.medium}`,
@@ -16,16 +17,32 @@ const Button = styled('button', {
   backgroundColor: `${neutral[200]}`,
   fontWeight: '500',
   cursor: 'pointer',
+  transition: 'all 200ms',
   '&:hover': {
     backgroundColor: `${neutral[400]}`,
+  },
+
+  variants: {
+    variant: {
+      outline: {
+        backgroundColor: `${neutral[100]}`,
+        color: `${dark[400]}`,
+        border: `1px solid ${blue[100]}`,
+
+        '&:hover': {
+          backgroundColor: 'rgba(41,98,255,0.1)'
+        }
+      }
+    }
   }
 })
 
 function App() {
   return (
     <div>
-      <h1>compons</h1>
+      <h1>Buttons</h1>
       <Button>default</Button>
+      <Button variant='outline'>Default</Button>
 
     </div>
   );
