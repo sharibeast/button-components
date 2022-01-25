@@ -30,7 +30,16 @@ const Button = styled('button', {
         border: `1px solid ${blue[100]}`,
 
         '&:hover': {
-          backgroundColor: 'rgba(41,98,255,0.1)'
+          backgroundColor: `${blue[400]}`
+        }
+      },
+      text: {
+        background: 'none',
+        border: 'color',
+        color: `${blue[100]}`,
+
+        '&:hover': {
+          backgroundColor: `${blue[400]}`
         }
       }
     }
@@ -43,6 +52,7 @@ function App() {
       <h1>Buttons</h1>
       <Button>default</Button>
       <Button variant='outline'>Default</Button>
+      <Button variant='text'>Default</Button>
 
     </div>
   );

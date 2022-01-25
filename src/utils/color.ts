@@ -5,6 +5,7 @@ export const blue: Color = {
   100: '#3D5AFE',
   200: '#2962FF',
   300: '#0039CB',
+  400:'rgba(41,98,255,0.1)'
 };
 
 export const red: Red = {
