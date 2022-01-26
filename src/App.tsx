@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@stitches/react'
-import { typeScale, neutral, dark, blue } from './utils';
+import { typeScale, neutral, dark, blue, red } from './utils';
 
 
 const Wrapper = styled('div', {
@@ -34,6 +34,43 @@ const Button = styled('button', {
         }
       }
     },
+    color: {
+      default: {
+        backgroundColor: `${neutral[200]}`
+      },
+      primary: {
+        backgroundColor: `${blue[100]}`,
+        color: `${neutral[100]}`,
+        '&:hover': {
+          backgroundColor: `${blue[300]}`
+        }
+      },
+      secondary: {
+        backgroundColor: `${dark[200]}`,
+        color: `${neutral[100]}`,
+        '&:hover': {
+          backgroundColor: `${dark[300]}`
+        }
+      },
+      danger: {
+        backgroundColor: `${red[100]}`,
+        color: `${neutral[100]}`,
+        '&:hover': {
+          backgroundColor: `${red[200]}`
+        }
+      }
+    },
+    size: {
+      sm: {
+        padding: '6px 12px'
+      },
+      md: {
+        padding: '8px 16px'
+      },
+      lg: {
+        padding: '11px 22px'
+      }
+    },
 
     variant: {
       outline: {
@@ -63,7 +100,10 @@ const Button = styled('button', {
         }
       }
     }
-  }
+  },
+  // defaultVariants: {
+  //   color: 'primary'
+  // }
 })
 
 function App() {
@@ -75,6 +115,20 @@ function App() {
       <Button variant='text'>Default</Button>
       <Button disableShadow>Default</Button>
       <Button disabled variant='text'>Disabled</Button>
+
+      <br />
+
+      <Button size='sm'>small</Button>
+      <Button size='md'>medium</Button>
+      <Button size='lg'>large</Button>
+
+
+      <br />
+
+      <Button color='default'>Default</Button>
+      <Button color='primary'>Default</Button>
+      <Button color='secondary'>Secondary</Button>
+      <Button color='danger'>Danger</Button>
 
     </div>
   );
