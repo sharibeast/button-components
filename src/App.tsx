@@ -38,8 +38,9 @@ const Button = styled('button', {
     variant: {
       outline: {
         backgroundColor: `${neutral[100]}`,
-        color: `${dark[400]}`,
+        color: `${blue[100]}`,
         border: `1px solid ${blue[100]}`,
+
 
         '&:hover': {
           backgroundColor: `${blue[400]}`
@@ -49,9 +50,16 @@ const Button = styled('button', {
         background: 'none',
         border: 'color',
         color: `${blue[100]}`,
-
         '&:hover': {
           backgroundColor: `${blue[400]}`
+        },
+
+
+        '&:disabled': {
+          color: `${neutral[400]}`,
+          '&:hover': {
+            backgroundColor: `${neutral[100]}`
+          }
         }
       }
     }
@@ -66,6 +74,7 @@ function App() {
       <Button variant='outline'>Default</Button>
       <Button variant='text'>Default</Button>
       <Button disableShadow>Default</Button>
+      <Button disabled variant='text'>Disabled</Button>
 
     </div>
   );
